@@ -2,7 +2,6 @@
 
 A likelihood-based statistical tool specifically designed to identify and classify various types of biased statements or comments related to different categories such as gender or religion within a given dataset.
 
-
 ## Table of Contents
 
 - [Abstract](#abstract)
@@ -11,7 +10,6 @@ A likelihood-based statistical tool specifically designed to identify and classi
 - [Usage](#usage)
 - [Datasets](#datasets)
 - [Contributing](#contributing)
-
 
 ## Abstract
 
@@ -32,24 +30,24 @@ performance of our model and validate the classification pro-
 cess, experiments were performed on various publicly available
 datasets, including the Multi-Dimensional Gender Bias dataset
 
-
 ## Features
 
 - **Identify Biases:** Likelihood-based statistical approach specifically designed to identify and classify various
-types of biased statements or comments related to different
-categories such as gender or religion in language.
-- **Annotation:** Can be used for content moderation, text analysis and annotation. 
+  types of biased statements or comments related to different
+  categories such as gender or religion in language.
+- **Annotation:** Can be used for content moderation, text analysis and annotation.
 - **Controversial Biases:** Identify biased or discriminatory language in so- cial media spaces towards protected attributes (such as gender, ethnicity or religion.
-
 
 ## Installation
 
 Follow these steps to install and set up and use our model to anaylze text on your local machine:
 
 1. Step 1: Install all the prerequisites using the following command
+
 ```bash
 $ pip install requirements.txt
 ```
+
 2. Step 2: Choose and install a pre-trained word embedding model from popular options like Bert, Sbert, spaCy, or gensim. (You can also train your own word-embeddings)
 3. You can use the example notebooks, such as `example1.ipynb` to analyze your own data with the **sbert_model**, Please feel free to interact with the two experimentation notebooks located in the main directory. You have the flexibility to choose any word embedding model that you prefer for your experiments. By exploring and comparing the results obtained from different word embeddings.
 
@@ -71,7 +69,7 @@ from src.model import LikelihoodModelForNormalDist
 
 # Set two different target sets consitsting of words you wish to target
 target_set_1 = ["abuse", "bad", "hate", "worst"]
-target_set_2   = ["love", "good", "peace", "calm"] 
+target_set_2   = ["love", "good", "peace", "calm"]
 
 # Select a list of Focus Words (i.e words that may contribute to the biases in any given comment)
 F = ["ADJ", "NOUN", "PRON"]
@@ -98,14 +96,13 @@ data["prclass"] = preds
 
 Information regarding the datasets used in the experiments
 
-| Dataset                          | Targeted Bias        | Annotated | Total comments | $c_1$-related | $c_2$-related | Neutral comments |
-|----------------------------------|----------------------|-----------|----------------|---------------|---------------|------------------|
-| Twitter (social_bias_frames)     | Racism/Antisemitism  | Yes       | 30,430         | 3124          | 1143          | 26,163           |
-| Reddit (one-million-reddit-jokes)| Racism               | No        | 400,000        | 16,753        | 19,119        | 364,128          |
-| McDonald's Store Reviews (US)    | Sentiment            | No        | 33,396         | 6,705         | 2263          | 24428            |
-| ImageChat (md_gender_bias)       | Gender-Identity      | Yes       | 329,908        | 21,251        | 62,383        | 225,168          |
-| Sexist Workplace Statements      | Sexism               | Yes       | 1137           | -             | -             | 513              |
-
+| Dataset                           | Targeted Bias       | Annotated | Total comments | $c_1$-related | $c_2$-related | Neutral comments |
+| --------------------------------- | ------------------- | --------- | -------------- | ------------- | ------------- | ---------------- |
+| Twitter (social_bias_frames)      | Racism/Antisemitism | Yes       | 30,430         | 3124          | 1143          | 26,163           |
+| Reddit (one-million-reddit-jokes) | Racism              | No        | 400,000        | 16,753        | 19,119        | 364,128          |
+| McDonald's Store Reviews (US)     | Sentiment           | No        | 33,396         | 6,705         | 2263          | 24428            |
+| ImageChat (md_gender_bias)        | Gender-Identity     | Yes       | 329,908        | 21,251        | 62,383        | 225,168          |
+| News Classification               | News Categories     | No        | 100,000        | 12,871        | 12,871        | 74,270           |
 
 ## Contributing
 
